@@ -109,9 +109,9 @@ async function main() {
         const ip = await getIP();
         const shouldUpdate = hasIPChanged(ip);
 
-        // if (!shouldUpdate) {
-        //     process.exit();
-        // }
+        if (!shouldUpdate) {
+            process.exit();
+        }
 
         const records = process.argv[RECORDS_ARG].split(',');
         await Promise.all(records.map(async (record) => {
