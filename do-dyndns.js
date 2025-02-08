@@ -82,8 +82,6 @@ async function createOrUpdateRecord(record, ip) {
         const json = await response.json();
         console.log(json)
     } else {
-        // TODO: record updates here
-
         // update record
         console.log(`Updating record: ${record} ${ip}`);
         const url = `https://api.digitalocean.com/v2/domains/${process.argv[DOMAIN_ARG]}/records/${existingRecord.id}`;
@@ -100,8 +98,7 @@ async function createOrUpdateRecord(record, ip) {
         console.log(response)
         const json = await response.json();
         console.log(json)
-    }
-            
+    }            
 }
 
 async function main() {
